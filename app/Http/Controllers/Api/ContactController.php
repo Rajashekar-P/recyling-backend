@@ -17,7 +17,8 @@ class ContactController extends Controller
     public function addContact(Request $request)
     {
         $contact = new Contact();
-        $contact->address = $request->address;
+        $contact->name = $request->name;
+        $contact->message = $request->message;
         $contact->email = $request->email;
         $contact->phone = $request->phone;
         $contact->save();

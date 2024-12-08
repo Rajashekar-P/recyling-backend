@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\ItemController;
+use App\Http\Controllers\Api\FeedBackController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,4 +24,7 @@ Route::get('/contacts', [ContactController::class, 'index']);
 
 Route::post('/items', [ItemController::class, 'addItem']);
 Route::get('/items', [ItemController::class, 'index']);
-Route::put('/items/{id}', [ItemController::class, 'update']);
+Route::patch('/items/{id}/status', [ItemController::class, 'updateStatus']);
+
+Route::get('/feedbacks', [FeedBackController::class, 'index']);
+Route::post('/feedbacks', [FeedBackController::class, 'addFeedback']);
